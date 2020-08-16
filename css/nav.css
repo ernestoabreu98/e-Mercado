@@ -1,0 +1,17 @@
+ul li {
+    list-style: none;
+    scroll-padding-inline: 10px;
+}
+.menu button {
+    background-color: #e02d6d;
+    color: white;
+    border-radius: 6px;
+    border-bottom: 0px;
+    border-top: 3px;
+    font-weight: bolder;
+}
+
+.menu button:hover {
+    background-color: white;
+    color: #e02d6d;
+}
