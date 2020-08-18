@@ -41,8 +41,8 @@ function showProductsList(){
     for(let i = 0; i < currentProductsArray.length; i++){
         let products = currentProductsArray[i];
 
-        if (((minCount == undefined) || (minCount != undefined && parseInt(products.productCount) >= minCount)) &&
-            ((maxCount == undefined) || (maxCount != undefined && parseInt(products.productCount) <= maxCount))){
+        if (((minCount == undefined) || (minCount != undefined && parseInt(products.soldCount) >= minCount)) &&
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(products.soldCount) <= maxCount))){
 
             htmlContentToAppend += `
             <a href="product-info.html" class="list-group-item list-group-item-action">
