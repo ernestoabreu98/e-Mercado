@@ -1,7 +1,7 @@
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";
-const ORDER_ASC_BY_PRICE = 0;
-const ORDER_DESC_BY_PRICE = 0;
+const ORDER_ASC_BY_PRICE = "Precio-ASC";
+const ORDER_DESC_BY_PRICE = "Precio-DESC";
 const ORDER_BY_PROD_COUNT = "Cant.";
 var currentProductsArray = [];
 var currentSortCriteria = undefined;
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
         }
     });
-    
+
     document.getElementById("sortAsc").addEventListener("click", function(){
         sortAndShowProducts(ORDER_ASC_BY_PRICE);
     });
