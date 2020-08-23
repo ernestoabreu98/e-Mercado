@@ -153,20 +153,3 @@ document.addEventListener("DOMContentLoaded", function(e){
         showProductsList();
     });
 });
-
-const content = currentProductsArray;
-const search_box = document.getElementById("search_box");
-const search_button = document.getElementById("search_button");
-search_button.addEventListener("click", filter);
-
-
-const filter = () => {
-    const text = search_box.value.toLowerCase();
-    for (let i = 0; i < content.length; i++) {
-        const coincidence = content.name.toLowerCase();
-        if (name.indexOf(text) !== -1) {
-            document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
-        }
-        
-    }
-}
