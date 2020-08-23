@@ -224,5 +224,17 @@
       <script src="js/dropzone.js"></script>
       <script src="js/init.js"></script>
       <script src="js/sell.js"></script>
+      <script>
+        const user_account = document.getElementById("info-user");
+  
+        if (localStorage.getItem("user") === null) {
+          location.href = "login.html";
+          
+        } else {
+          user_account.innerHTML += `Bienvenido/a: ${localStorage.getItem("user")}`
+          
+        }
+      </script>
+  
     </body>
 </html>
