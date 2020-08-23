@@ -1,3 +1,13 @@
+const user_account = document.getElementById("info-user");
+
+if (localStorage.getItem("user") === null) {
+  location.href = "login.html";
+  
+} else {
+  user_account.innerHTML += `Bienvenido/a: ${localStorage.getItem("user")}`
+  
+}
+
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   localStorage.setItem("user", profile.getName());
