@@ -70,7 +70,7 @@ function showProductsList(){
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1">`+ products.name +`</h4>
-                            <small class="text-muted">` + " Cantidad Vendidos: " + products.soldCount + ` artículos</small>
+                            <small class="text-muted">` + "Vendidos: " + products.soldCount + ` artículos</small>
                         </div>
                         <p class="mb-1">` + products.description + `</p>
                         <p class="mb-1">` + "Precio: " + products.cost + " " + products.currency + `</p>
@@ -132,8 +132,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
     document.getElementById("rangeFilterCount").addEventListener("click", function(){
         //Obtengo el mínimo y máximo de los intervalos para filtrar por cantidad
-        //de productos por categoría.
-        alert("Algo no anda Bien");
+        //de productos
         minCount = document.getElementById("rangeFilterCountMin").value;
         maxCount = document.getElementById("rangeFilterCountMax").value;
 
