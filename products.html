@@ -42,8 +42,6 @@
             <div class="row">
                 <div class="col text-right">
                     <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                        <input type="text" id="search-box"> 
-                        <span><button id="search-button">Buscar</button></span>
                         <label class="btn btn-light active" id="sortAsc" >
                             <input type="radio" name="options" autocomplete="off" checked>Precio: Ascendente
                         </label>
@@ -57,7 +55,10 @@
                 </div>
             </div>
             <div class="row justify-content-end">
-              <div class="col-md-6"></div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" id="search-box"> 
+                <span><button class="btn active" id="search-button">Buscar</button></span>
+              </div>
                 <div class="col-md-6 col-sm-12 mb-1 container">
                   <div class="row container p-0 m-0">
                     <div class="col">
