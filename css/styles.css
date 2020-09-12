@@ -143,3 +143,11 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+
+.ratings .fa {
+  font-size: 20px;
+  color: #FF9800;
+  cursor: pointer;
+  float: left;
+}
