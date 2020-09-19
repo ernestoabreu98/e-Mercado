@@ -24,13 +24,15 @@
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <span class="py-2 d-none d-md-inline-block" id="account"> 
-          <ul class="menu">
-            <li id="info-user"></li>
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="button-name">
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Mi Cuenta</a></li>
+            <li><a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a></li>
             <li><button id="cerrar-sesion" onclick="signOut();">Cerrar Sesión</button></li>
-         </ul>
-         </span> 
+          </ul>
+        </div>
       </div>
     </nav>
     <main role="main" class="pb-5">
@@ -108,7 +110,7 @@
     
     
     <script>
-      const user_account = document.getElementById("info-user");
+      const user_account = document.getElementById("button-name");
 
       if (localStorage.getItem("user") === null) {
         location.href = "login.html";

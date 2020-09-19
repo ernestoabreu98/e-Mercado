@@ -1,8 +1,12 @@
-ul li {
+ul li a  {
     list-style: none;
-    scroll-padding-inline: 10px;
+    margin-left: 10px;
 }
-.menu button {
+
+button {
+    margin-left: 8px;
+}
+.dropdown button {
     background-color: #e02d6d;
     color: white;
     border-radius: 6px;
@@ -11,7 +15,19 @@ ul li {
     font-weight: bolder;
 }
 
-.menu button:hover {
+.dropdown button:hover {
     background-color: white;
     color: #e02d6d;
 }
+
+.dropdown-menu {
+    border-radius: 6px;
+    margin-top: 7px;
+    background-color: white;
+}
+
+.dropdown-menu button:hover {
+    background-color: #e02d6d;
+    color: black;
+}
+
