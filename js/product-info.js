@@ -16,32 +16,14 @@ var newComment = {}
             </div>
         </div>
 
+        
+
         `
 
         document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
     }
 }
 
-/*function showRelatedProducts(array){//Muestro los productos relacionados 
-
-    let htmlContentToAppend = "";
-
-    for (let i = 0; i < array.length; i++) {
-        var relatedProduct = array[i];
-
-        htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + relatedProduct.imgSrc + `" alt="">
-                <h4 class="mb-1">`+ relatedProduct.name +`</h4>
-                <p class="mb-1">` + relatedProduct.description + `</p>
-            </div>
-        </div>
-        `
-
-        document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;
-    }
-}*/
 
 function showComments(array) {
   let htmlContentToAppend = "";
