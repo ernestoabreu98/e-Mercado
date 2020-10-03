@@ -1,69 +1,348 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="google-signin-client_id" content="973386847371-t0412hgakursrq0i94v16kcbd1rhtlha.apps.googleusercontent.com">
+    <meta name="google-signin-scope" content="profile email">
+    <title>eMercado - Todo lo que busques está aquí</title>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/nav.css">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1 bg-dark">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="button-name">
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#"><img src="./icons/profile.ico"> Mi Perfil</a></li>
+            <li><a class="py-2 d-none d-md-inline-block" href="cart.html"><img src="./icons/cart.ico"> Mi carrito</a></li>
+            <li><button id="cerrar-sesion" onclick="signOut();">Cerrar Sesión</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-5">
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
+      <!--Section: Content-->
+      <section class="dark-grey-text">
+    
+        <div class="card">
+          <div class="card-body">
+    
+            <!--Grid row-->
+            <div class="row">
+    
+              <!--Grid column-->
+              <div class="col-lg-8">
+    
+                <!-- Pills navs -->
+                <ul class="nav md-pills nav-justified pills-primary font-weight-bold">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#tabCheckoutBilling123" role="tab">1. Facturacion</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#tabCheckoutPayment123" role="tab">2. Pago</a>
+                  </li>
+                </ul>
+    
+                <!-- Pills panels -->
+                <div class="tab-content pt-4">
+    
+                  <!--Panel 1-->
+                  <div  class="tab-pane fade in show active" id="tabCheckoutBilling123" role="tabpanel">
+    
+                    <!--Card content-->
+                    <form>
+    
+                      <!--Grid row-->
+                      <div class="row">
+    
+                        <!--Grid column-->
+                        <div class="col-md-6 mb-4">
+    
+                          <!--firstName-->
+                          <label for="firstName" class="">Nombre</label>
+                          <input type="text" id="firstName" class="form-control">
+    
+                        </div>
+                        <!--Grid column-->
+    
+                        <!--Grid column-->
+                        <div class="col-md-6 mb-2">
+    
+                          <!--lastName-->
+                          <label for="lastName" class="">Apellido</label>
+                          <input type="text" id="lastName" class="form-control">
+    
+                        </div>
+                        <!--Grid column-->
+    
+                      </div>
+                      <!--Grid row-->
+    
+                      <!--Username-->
+                      <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">Envío</legend>
+                        <div class="col-sm-10">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="delivery1" value="option1" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                              Premium (2-5 Días) 15% Adicional 
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="delivery2" value="option2">
+                            <label class="form-check-label" for="gridRadios2">
+                              Express (5-8 Días) 7% Adicional
+                            </label>
+                          </div>
+                          <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="delivery3" value="option3">
+                            <label class="form-check-label" for="gridRadios3">
+                              Standard (12-15 Días) 5% Adicional
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+    
+                      <!--email-->
+                      <label for="email" class="" style="margin-top: 20px;">Email (Opcional)</label>
+                      <input type="text" id="email" class="form-control mb-4" placeholder="youremail@example.com">
+    
+                      <!--address-->
+                      <label for="address" class="">Direccion</label>
+                      <input type="text" id="address" class="form-control mb-4" placeholder="Calle, Número, Esquina">
+    
+                      <!--Grid row-->
+                      <div class="row">
+    
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-12 mb-4">
+    
+                          <label for="country">País</label>
+                          <select class="custom-select d-block w-100" id="country" required>
+                            <option value="">Seleccione...</option>
+                            <option>Uruguay</option>
+                            <option>Argentina</option>
+                            <option disabled>Brasil</option>
+                            <option disabled>Chile</option>
+                            <option disabled>Colombia</option>
+                            <option disabled>Venezuela</option>
+                            <option disabled>Paraguay</option>
+                            <option disabled>Guatemala</option>
+                            <option disabled>El Salvador</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Por favor, seleccione un país válido.
+                          </div>
+    
+                        </div>
+                        <!--Grid column-->
+    
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-4">
+    
+                          <label for="state">Departamento</label>
+                          <select class="custom-select d-block w-100" id="state" required>
+                            <option value="">Seleccione...</option>
+                            <option>Montevideo</option>
+                            <option>Buenos Aires</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Por favor, seleccione un departamento válido.
+                          </div>
+    
+                        </div>
+                        <!--Grid column-->
+    
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-4">
+    
+                          <label for="zip">Código Postal</label>
+                          <input type="text" class="form-control" id="zip" placeholder="" required>
+                          <div class="invalid-feedback">
+                            El Código Postal es obligatorio.
+                          </div>
+    
+                        </div>
+                        <!--Grid column-->
+    
+                      </div>
+                      <!--Grid row-->
+    
+                      <hr>
+    
+                      <div class="mb-1" style="margin-left: 20px;">
+                        <input type="checkbox" class="form-check-input filled-in" id="chekboxRules">
+                        <label class="form-check-label" for="chekboxRules">Acepto los Términos y Condiciones</label>
+                      </div>
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
+    
+                      <hr>
+    
+                      <button class="btn btn-primary btn-lg btn-block" type="submit">Siguiente</button>
+    
+                    </form>
+    
+                  </div>
+                  <!--/.Panel 2-->
+    
+                  <!--Panel 3-->
+                  <div class="tab-pane fade" id="tabCheckoutPayment123" role="tabpanel">
+    
+                    <div class="d-block my-3" style="margin-left: 18px;">
+                      <div class="mb-2">
+                        <input name="group2" type="radio" class="form-check-input with-gap" id="radioWithGap4" checked
+                          required>
+                        <label class="form-check-label" for="radioWithGap4">Tarjeta de Crédito</label>
+                      </div>
+                      <div class="mb-2">
+                        <input iname="group2" type="radio" class="form-check-input with-gap" id="radioWithGap5"
+                          required>
+                        <label class="form-check-label" for="radioWithGap5">Tarjeta de Débito</label>
+                      </div>
+                      <div class="mb-2">
+                        <input name="group2" type="radio" class="form-check-input with-gap" id="radioWithGap6" required>
+                        <label class="form-check-label" for="radioWithGap6">Paypal</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="cc-name123">Nombre en la Tarjeta</label>
+                        <input type="text" class="form-control" id="cc-name123" placeholder="" required>
+                        <small class="text-muted">Nombre completo que aparece reflejado en la Tarjeta</small>
+                        <div class="invalid-feedback">
+                          Es nombre es Obligatorio
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="cc-number123">Numero de la Tarjeta</label>
+                        <input type="text" class="form-control" id="cc-number123" placeholder="" required>
+                        <div class="invalid-feedback">
+                          El número es Obligatorio
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3 mb-3"> 
+                        <label for="cc-expiration123">Vencimiento</label>
+                        <input type="text" class="form-control" id="cc-expiration123" placeholder="" required>
+                        <div class="invalid-feedback">
+                          La Fecha de Vencimiento es obligatoria
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="cc-cvv123">CVV</label>
+                        <input type="text" class="form-control" id="cc-cvv123" placeholder="" required>
+                        <div class="invalid-feedback">
+                          El Código de Seguridad es Obligatorio
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="mb-4">
+    
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Realizar Pedido</button>
+    
+                  </div>
+                  <!--/.Panel 3-->
+    
+                </div>
+                <!-- Pills panels -->
+    
+    
+              </div>
+              <!--Grid column-->
+    
+              <!--Grid column-->
+              <div class="col-lg-4 mb-4">
+    
+                <!--Card-->
+                <div class="card z-depth-0 border border-light rounded-0">
+    
+                  <!--Card content-->
+                  <div class="card-body">
+                    <h4 class="mb-4 mt-1 h5 text-center font-weight-bold">Resumen</h4>
+    
+                    <hr>
+                    <div class="card-body" id="cart-info"></div>
+                    <hr>
+                    <dl class="row">
+                      <dt class="col-sm-8">
+                        Subtotal:
+                      </dt>
+                      <dt class="col-sm-4" id="subtotal-price">
+                        <hr>
+                      <dt class="col-sm-8">
+                        Total:
+                      </dt>
+                      <dt class="col-sm-4" id="total-price">
+                        
+                      </dt>
+                    </dl>
+                  </div>
+    
+                </div>
+                <!--/.Card-->
+    
+    
+    
+              </div>
+              <!--Grid column-->
+    
+            </div>
+            <!--Grid row-->
+    
+          </div>
+        </div>
+    
+      </section>
+      <!--Section: Content-->
+    
+    
+    </div>
+    <footer class="text-muted bg-light">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/login-google.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    
+    
+    <script>
+      const user_account = document.getElementById("button-name");
+
+      if (localStorage.getItem("user") === null) {
+        location.href = "login.html";
+        
+      } else {
+        user_account.innerHTML += `Bienvenido/a: ${localStorage.getItem("user")}`
+        
       }
-    }
-  </style>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <link href="css/dropzone.css" rel="stylesheet">
-</head>
-
-<body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-    </div>
-  </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
-</body>
-
+    </script>
+  </body>
 </html>
