@@ -29,6 +29,9 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
          `
         var shop = document.getElementById("cart-info");
         shop.innerHTML = content;
+        localStorage.setItem("Badge", articles.length);
+        var badge = localStorage.getItem("Badge")
+        document.getElementById("badge").innerHTML = badge;
         
     } 
 }
@@ -69,6 +72,8 @@ document.addEventListener("DOMContentLoaded", function(e){
             showTotal(articles);
        
         }
+
+        
 
     })
 });
