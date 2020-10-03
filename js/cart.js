@@ -71,23 +71,4 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
 
     })
-
-    document.getElementById("delivery1").addEventListener("change", function(){
-        delivery = 0.15;
-        showTotal(articles);
-
-    });
-    
-    
-    document.getElementById("delivery2").addEventListener("change", function(){
-        delivery = 0.07;
-        showTotal(articles);
-
-    });
-
-    document.getElementById("delivery3").addEventListener("change", function(){
-        total =  total*0.05;
-        showTotal(articles);
-
-    });
 });
