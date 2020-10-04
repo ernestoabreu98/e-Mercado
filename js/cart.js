@@ -23,7 +23,7 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
         <p style="text-decoration: solid; font-weight: bolder;">Moneda: ${article.currency}</p>
         </dd>
         <dd class="col-sm-8" id="count-1">
-        <p style="text-decoration: solid; font-weight: bolder;">Cantidad: <span><input class="quantity" min="1" name="quantity" value="${article.count}" type="number" id="${element.length}"></span></p>
+        <p style="text-decoration: solid; font-weight: bold;">Cantidad: <input class="form-control" min="1" name="quantity" value="${article.count}" type="number" id="${element.length}"></span></p>
         </dd>
       </dl>
          `
@@ -37,7 +37,10 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
 }
 
 
-function showTotal(element){//Funcion que recibe un objeto como parametro y se encarga de calcular el Precio Total y de convertir la moneda en caso necesario
+function showTotal(element, deliveryPrice){//Funcion que recibe un objeto como parametro y se encarga de calcular el Precio Total y de convertir la moneda en caso necesario
+    if (!deliveryPrice){
+        deliveryPrice = 0.05;
+    }
     var total = 0;
     
     for (item of element) {
@@ -51,11 +54,46 @@ function showTotal(element){//Funcion que recibe un objeto como parametro y se e
         
 
     }
-    
-    
+
+    document.getElementById("subtotal-price").innerHTML = total + " USD"
+    total += (total*deliveryPrice);
     
     document.getElementById("total-price").innerHTML = total + " USD"
 }
+
+
+function shipp(event) {
+    var value = event.target.value;
+    //console.log(event);
+    switch(value) {
+        case "option1":
+          console.log(value);
+          delivery = 0.15;
+          showTotal(articles, delivery)
+          break;
+        case "option2":
+            console.log(value);
+            delivery = 0.07;
+            showTotal(articles, delivery)
+          break;
+        case "option3":
+            console.log(value);
+            delivery = 0.05;
+            showTotal(articles, delivery)
+          break;
+        default:
+          // code block
+      }
+      
+    
+}
+
+
+function finishBuy() {
+    location.href = "cart-succesfully.html";
+    
+}
+
 
 
 
@@ -76,4 +114,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         
 
     })
+
+   // document.getElementById("finish-buy").addEventListener("click", finishBuy()) 
+    
 });

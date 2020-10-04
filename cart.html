@@ -53,10 +53,10 @@
                 <!-- Pills navs -->
                 <ul class="nav md-pills nav-justified pills-primary font-weight-bold">
                   <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#tabCheckoutBilling123" role="tab">1. Facturacion</a>
+                    <a class="nav-link active" data-toggle="tab" href="#tabCheckoutBilling123" role="tab">FACTURACIÓN</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tabCheckoutPayment123" role="tab">2. Pago</a>
+                    <a class="nav-link" data-toggle="tab" href="#tabCheckoutPayment123" role="tab">PAGO</a>
                   </li>
                 </ul>
     
@@ -100,19 +100,19 @@
                         <legend class="col-form-label col-sm-2 pt-0">Envío</legend>
                         <div class="col-sm-10">
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="delivery1" value="option1" checked>
+                            <input onchange="shipp(event);" class="form-check-input" type="radio" name="gridRadios" id="delivery1" value="option1">
                             <label class="form-check-label" for="gridRadios1">
                               Premium (2-5 Días) 15% Adicional 
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="delivery2" value="option2">
+                            <input onchange="shipp(event);" class="form-check-input" type="radio" name="gridRadios" id="delivery2" value="option2" >
                             <label class="form-check-label" for="gridRadios2">
                               Express (5-8 Días) 7% Adicional
                             </label>
                           </div>
                           <div class="form-check disabled">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="delivery3" value="option3">
+                            <input onchange="shipp(event);" class="form-check-input" type="radio" name="gridRadios" id="delivery3" value="option3" checked>
                             <label class="form-check-label" for="gridRadios3">
                               Standard (12-15 Días) 5% Adicional
                             </label>
@@ -256,7 +256,7 @@
                     </div>
                     <hr class="mb-4">
     
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Realizar Pedido</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="finishBuy();">Realizar Pedido</button>
     
                   </div>
                   <!--/.Panel 3-->
@@ -276,7 +276,7 @@
     
                   <!--Card content-->
                   <div class="card-body">
-                    <h4 class="mb-4 mt-1 h5 text-center font-weight-bold">Resumen</h4>
+                    <h1 class="mb-4 mt-1 h5 text-center font-weight-bold">Resumen</h1>
     
                     <hr>
                     <div class="card-body" id="cart-info"></div>
