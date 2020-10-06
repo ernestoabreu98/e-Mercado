@@ -2,6 +2,7 @@ var articles = {}; //Declaro el objeto que contiene el array luego de hacer un F
 var delivery = 0;
 
 
+
 function showCart(element){//Funcion que recibe un objeto y luego crea el contenido en el HTML con los datos obtenidos
     let content = ``;
     for (let i = 0; i < element.length; i++) {
@@ -55,8 +56,12 @@ function showTotal(element, deliveryPrice){//Funcion que recibe un objeto como p
 
     }
 
+    document.getElementById("send-price").innerHTML = new Intl.NumberFormat("de-DE").format(((total*deliveryPrice)/40).toFixed("2")) + " USD"
+
     document.getElementById("subtotal-price").innerHTML = total + " USD"
     total += (total*deliveryPrice);
+
+    
     
     document.getElementById("total-price").innerHTML = total + " USD"
 }
@@ -87,6 +92,9 @@ function shipp(event) {
       
     
 }
+
+
+
 
 
 function finishBuy() {
