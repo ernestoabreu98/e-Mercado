@@ -24,8 +24,9 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
         <p style="text-decoration: solid; font-weight: bolder;">Moneda: ${article.currency}</p>
         </dd>
         <dd class="col-sm-8" id="count-1">
-        <p style="text-decoration: solid; font-weight: bold;">Cantidad: <input class="form-control" min="1" name="quantity" value="${article.count}" type="number" id="${element.length}"></span></p>
+        <p style="text-decoration: solid; font-weight: bold;">Cantidad: <input class="form-control" min="1" name="quantity" value="${article.count}" type="number" id="${i}"></span></p>
         </dd>
+        <button class="btn btn-primary btn-lg btn-block" onclick="deleteArt();"> Eliminar Artículo </button>
       </dl>
          `
         var shop = document.getElementById("cart-info");
@@ -33,6 +34,7 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
         localStorage.setItem("Badge", articles.length);
         var badge = localStorage.getItem("Badge")
         document.getElementById("badge").innerHTML = badge;
+        console.log
         
     } 
 }
@@ -56,7 +58,7 @@ function showTotal(element, deliveryPrice){//Funcion que recibe un objeto como p
 
     }
 
-    document.getElementById("send-price").innerHTML = new Intl.NumberFormat("de-DE").format(((total*deliveryPrice)/40).toFixed("2")) + " USD"
+    document.getElementById("send-price").innerHTML = new Intl.NumberFormat("de-DE").format((total*deliveryPrice).toFixed("2")) + " USD"
 
     document.getElementById("subtotal-price").innerHTML = total + " USD"
     total += (total*deliveryPrice);
@@ -67,7 +69,7 @@ function showTotal(element, deliveryPrice){//Funcion que recibe un objeto como p
 }
 
 
-function shipp(event) {
+function shipp(event) {//Funcion que se encarga de modificar el valor de la variable "delivery" segun la opcion seleccionada en el HTML
     var value = event.target.value;
     //console.log(event);
     switch(value) {
@@ -78,7 +80,7 @@ function shipp(event) {
           break;
         case "option2":
             console.log(value);
-            delivery = 0.07;
+            delivery = .07;
             showTotal(articles, delivery)
           break;
         case "option3":
@@ -93,6 +95,11 @@ function shipp(event) {
     
 }
 
+
+function deletArt(art) {
+    articles.splice(art, 1)
+    
+}
 
 
 
