@@ -8,6 +8,8 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
     for (let i = 0; i < element.length; i++) {
         var article = element[i];
         var subtotal = article.unitCost*article.count;
+        var artId = 'ART' + i;
+        element[i].artId = artId;
 
         content+= ` <dl class="row">
         <dd class="col-sm-8" id="img-1">
@@ -24,7 +26,7 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
         <p style="text-decoration: solid; font-weight: bolder;">Moneda: ${article.currency}</p>
         </dd>
         <dd class="col-sm-8" id="count-1">
-        <p style="text-decoration: solid; font-weight: bold;">Cantidad: <input class="form-control" min="1" name="quantity" value="${article.count}" type="number" id="${i}"></span></p>
+        <p style="text-decoration: solid; font-weight: bold;">Cantidad: <input class="form-control" min="1" name="quantity" value="${article.count}" type="number" id="${artId}" onchange="totalCounts(event);"></span></p>
         </dd>
         <button class="btn btn-primary btn-lg btn-block" onclick="deleteArt();"> Eliminar Artículo </button>
       </dl>
@@ -34,7 +36,8 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
         localStorage.setItem("Badge", articles.length);
         var badge = localStorage.getItem("Badge")
         document.getElementById("badge").innerHTML = badge;
-        console.log
+        
+        
         
     } 
 }
@@ -109,6 +112,29 @@ function finishBuy() {
     
 }
 
+function totalCounts(event){
+
+    var id = event.target.id;
+    var artSum = 0;
+
+    for (let i = 0; i < articles.length; i++) {
+        if (id === articles[i].artId) {
+            console.log(articles[i].unitCost);
+            var cost = articles[i].unitCost;
+            artSum = event.target.value*cost;
+            console.log(artSum)
+
+            
+            articles[i].count = event.target.value
+            
+            
+        }
+    } 
+
+    showTotal(articles)
+}
+
+
 
 
 
@@ -130,6 +156,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 
     })
 
-   // document.getElementById("finish-buy").addEventListener("click", finishBuy()) 
+   
     
 });
