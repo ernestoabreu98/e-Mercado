@@ -35,285 +35,91 @@
         </div>
       </div>
     </nav>
-    <div class="container mt-5">
+    <div class="container my-5 py-3 z-depth-1 rounded" >
 
 
       <!--Section: Content-->
       <section class="dark-grey-text">
     
-        <div class="card">
-          <div class="card-body">
+        <!-- Shopping Cart table -->
+        <div class="table-responsive">
     
-            <!--Grid row-->
-            <div class="row">
+          <table class="table product-table mb-0">
     
-              <!--Grid column-->
-              <div class="col-lg-8">
+            <!-- Table head -->
+            <thead class="mdb-color lighten-5">
+              <tr>
+                <th></th>
+                <th class="font-weight-bold">
+                  <strong>Articulo</strong>
+                </th>
+                <th></th>
+                <th class="font-weight-bold">
+                  <strong>Precio</strong>
+                </th>
+                <th class="font-weight-bold">
+                  <strong>Cantidad</strong>
+                </th>
+                <th class="font-weight-bold">
+                  <strong>Eliminar Articulo</strong>
+                </th>
+                <th></th>
+              </tr>
+            </thead>
+            <!-- /.Table head -->
     
-                <!-- Pills navs -->
-                <ul class="nav md-pills nav-justified pills-primary font-weight-bold">
-                  <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#tabCheckoutBilling123" role="tab">FACTURACIÓN</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tabCheckoutPayment123" role="tab">PAGO</a>
-                  </li>
-                </ul>
-    
-                <!-- Pills panels -->
-                <div class="tab-content pt-4">
-    
-                  <!--Panel 1-->
-                  <div  class="tab-pane fade in show active" id="tabCheckoutBilling123" role="tabpanel">
-    
-                    <!--Card content-->
-                    <form>
-    
-                      <!--Grid row-->
-                      <div class="row">
-    
-                        <!--Grid column-->
-                        <div class="col-md-6 mb-4">
-    
-                          <!--firstName-->
-                          <label for="firstName" class="">Nombre</label>
-                          <input type="text" id="firstName" class="form-control">
-    
-                        </div>
-                        <!--Grid column-->
-    
-                        <!--Grid column-->
-                        <div class="col-md-6 mb-2">
-    
-                          <!--lastName-->
-                          <label for="lastName" class="">Apellido</label>
-                          <input type="text" id="lastName" class="form-control">
-    
-                        </div>
-                        <!--Grid column-->
-    
-                      </div>
-                      <!--Grid row-->
-    
-                      <!--Username-->
-                      <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Envío</legend>
-                        <div class="col-sm-10">
-                          <div class="form-check">
-                            <input onchange="shipp(event);" class="form-check-input" type="radio" name="gridRadios" id="delivery1" value="option1">
-                            <label class="form-check-label" for="gridRadios1">
-                              Premium (2-5 Días) 15% Adicional 
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input onchange="shipp(event);" class="form-check-input" type="radio" name="gridRadios" id="delivery2" value="option2" >
-                            <label class="form-check-label" for="gridRadios2">
-                              Express (5-8 Días) 7% Adicional
-                            </label>
-                          </div>
-                          <div class="form-check disabled">
-                            <input onchange="shipp(event);" class="form-check-input" type="radio" name="gridRadios" id="delivery3" value="option3" checked>
-                            <label class="form-check-label" for="gridRadios3">
-                              Standard (12-15 Días) 5% Adicional
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-    
-                      <!--email-->
-                      <label for="email" class="" style="margin-top: 20px;">Email (Opcional)</label>
-                      <input type="text" id="email" class="form-control mb-4" placeholder="youremail@example.com">
-    
-                      <!--address-->
-                      <label for="address" class="">Direccion</label>
-                      <input type="text" id="address" class="form-control mb-4" placeholder="Calle, Número, Esquina">
-    
-                      <!--Grid row-->
-                      <div class="row">
-    
-                        <!--Grid column-->
-                        <div class="col-lg-4 col-md-12 mb-4">
-    
-                          <label for="country">País</label>
-                          <select class="custom-select d-block w-100" id="country" required>
-                            <option value="">Seleccione...</option>
-                            <option>Uruguay</option>
-                            <option>Argentina</option>
-                            <option disabled>Brasil</option>
-                            <option disabled>Chile</option>
-                            <option disabled>Colombia</option>
-                            <option disabled>Venezuela</option>
-                            <option disabled>Paraguay</option>
-                            <option disabled>Guatemala</option>
-                            <option disabled>El Salvador</option>
-                          </select>
-                          <div class="invalid-feedback">
-                            Por favor, seleccione un país válido.
-                          </div>
-    
-                        </div>
-                        <!--Grid column-->
-    
-                        <!--Grid column-->
-                        <div class="col-lg-4 col-md-6 mb-4">
-    
-                          <label for="state">Departamento</label>
-                          <select class="custom-select d-block w-100" id="state" required>
-                            <option value="">Seleccione...</option>
-                            <option>Montevideo</option>
-                            <option>Buenos Aires</option>
-                          </select>
-                          <div class="invalid-feedback">
-                            Por favor, seleccione un departamento válido.
-                          </div>
-    
-                        </div>
-                        <!--Grid column-->
-    
-                        <!--Grid column-->
-                        <div class="col-lg-4 col-md-6 mb-4">
-    
-                          <label for="zip">Código Postal</label>
-                          <input type="text" class="form-control" id="zip" placeholder="" required>
-                          <div class="invalid-feedback">
-                            El Código Postal es obligatorio.
-                          </div>
-    
-                        </div>
-                        <!--Grid column-->
-    
-                      </div>
-                      <!--Grid row-->
-    
-                      <hr>
-    
-                      <div class="mb-1" style="margin-left: 20px;">
-                        <input type="checkbox" class="form-check-input filled-in" id="chekboxRules">
-                        <label class="form-check-label" for="chekboxRules">Acepto los Términos y Condiciones</label>
-                      </div>
+            <!-- Table body -->
+            <tbody id="cart-info">
 
     
-                      <hr>
-                      <a class="nav-link btn btn-primary btn-lg btn-block" data-toggle="tab" href="#tabCheckoutPayment123" role="tab">Siguiente</a>
+            </tbody>
+            <!-- /.Table body -->
     
-                      <!--<a class="nav-link btn btn-primary btn-lg btn-block" data-toggle="tab" href="#tabCheckoutPayment123" role="tab">Siguiente</a>-->
-                    </form>
+          </table>
     
-                  </div>
-                  <!--/.Panel 2-->
-    
-                  <!--Panel 3-->
-                  <div class="tab-pane fade" id="tabCheckoutPayment123" role="tabpanel">
-    
-                    <div class="d-block my-3" style="margin-left: 18px;">
-                      <div class="mb-2">
-                        <input name="group2" type="radio" class="form-check-input with-gap" id="radioWithGap4" checked
-                          required>
-                        <label class="form-check-label" for="radioWithGap4">Tarjeta de Crédito</label>
-                      </div>
-                      <div class="mb-2">
-                        <input iname="group2" type="radio" class="form-check-input with-gap" id="radioWithGap5"
-                          required>
-                        <label class="form-check-label" for="radioWithGap5">Tarjeta de Débito</label>
-                      </div>
-                      <div class="mb-2">
-                        <input name="group2" type="radio" class="form-check-input with-gap" id="radioWithGap6" required>
-                        <label class="form-check-label" for="radioWithGap6">Transferencia Bancaria</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <label for="cc-name123">Nombre en la Tarjeta</label>
-                        <input type="text" class="form-control" id="cc-name123" placeholder="" required>
-                        <small class="text-muted">Nombre completo que aparece reflejado en la Tarjeta</small>
-                        <div class="invalid-feedback">
-                          Es nombre es Obligatorio
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <label for="cc-number123">Numero de la Tarjeta</label>
-                        <input type="text" class="form-control" id="cc-number123" placeholder="" required>
-                        <div class="invalid-feedback">
-                          El número es Obligatorio
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-3 mb-3"> 
-                        <label for="cc-expiration123">Vencimiento</label>
-                        <input type="text" class="form-control" id="cc-expiration123" placeholder="" required>
-                        <div class="invalid-feedback">
-                          La Fecha de Vencimiento es obligatoria
-                        </div>
-                      </div>
-                      <div class="col-md-3 mb-3">
-                        <label for="cc-cvv123">CVV</label>
-                        <input type="text" class="form-control" id="cc-cvv123" placeholder="" required>
-                        <div class="invalid-feedback">
-                          El Código de Seguridad es Obligatorio
-                        </div>
-                      </div>
-                    </div>
-                    <hr class="mb-4">
-    
-                    <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="finishBuy();">Realizar Pedido</button>
-    
-                  </div>
-                  <!--/.Panel 3-->
-    
-                </div>
-                <!-- Pills panels -->
-    
-    
-              </div>
-              <!--Grid column-->
-    
-              <!--Grid column-->
-              <div class="col-lg-4 mb-4">
-    
-                <!--Card-->
-                <div class="card z-depth-0 border border-light rounded-0">
-    
-                  <!--Card content-->
-                  <div class="card-body">
-                    <h1 class="mb-4 mt-1 h5 text-center font-weight-bold">Resumen</h1>
-    
-                    <hr>
-                    <div class="card-body" id="cart-info"></div>
-                    <hr>
-                    <dl class="row">
-                      <dt class="col-sm-8">
-                        Subtotal:
-                      </dt>
-                      <dt class="col-sm-4" id="subtotal-price">
-                        <hr>
-                        <dt class="col-sm-8">
-                          Costo de Envío:
-                        </dt>
-                        <dt class="col-sm-4" id="send-price"></dt>
-                        <hr>
-                      <dt class="col-sm-8">
-                        Total:
-                      </dt>
-                      <dt class="col-sm-4" id="total-price">
-                        
-                      </dt>
-                    </dl>
-                  </div>
-    
-                </div>
-                <!--/.Card-->
-    
-    
-    
-              </div>
-              <!--Grid column-->
-    
-            </div>
-            <!--Grid row-->
-    
-          </div>
         </div>
+
+        <div class="table-responsive">
+        <table class="table product-table mb-0"> 
+          <tbody>
+          <tr>
+            <td>
+              <h4 class="mt-2">
+                <strong>Subtotal: </strong><span id="subtotal-price"></span>
+              </h4>
+            </td>
+            <td>
+              <h4 class="mt-2">
+               <strong>Costo de Envío: </strong><span id="send-price"></span>
+              </h4>
+            </td>
+            <td>
+              <h4 class="mt-2">
+                <strong>Total: </strong><span id="total-price"></span>
+              </h4>
+              <button type="button" class="btn btn-primary btn-rounded">Finalizar Compra
+                <i class="fas fa-angle-right right"></i>
+              </button>
+              </td>
+            </td>
+             
+            </td>
+          </tr>
+        </tbody>
+          <!-- Fourth row -->
+        </table>
+      </div>
+      <div class="table-responsive">
+        <table class="table product-table mb-0"> 
+          <tbody>
+          <tr>
+            
+          </tr>
+        </tbody>
+          <!-- Fourth row -->
+        </table>
+      </div>
+    
     
       </section>
       <!--Section: Content-->

@@ -11,25 +11,26 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
         var artId = 'ART' + i;
         element[i].artId = artId;
 
-        content+= ` <dl class="row">
-        <dd class="col-sm-8" id="img-1">
-        <img class="img-thumbnail img-responsive" src="${article.src}" alt="${article.name}>
-        </dd>
-        <dd class="col-sm-8" id="price-1">
-          <p style="text-decoration: solid; font-weight: bolder;"> Precio:  ${article.unitCost}</p>
-        </dd>
-        <dd class="col-sm-8" id="product-1">
-        <p style="text-decoration: solid; font-weight: bolder;">Artículo: ${article.name}</p>
-        </dd>
-        
-        <dd class="col-sm-8" id="currency-1">
-        <p style="text-decoration: solid; font-weight: bolder;">Moneda: ${article.currency}</p>
-        </dd>
-        <dd class="col-sm-8" id="count-1">
-        <p style="text-decoration: solid; font-weight: bold;">Cantidad: <input class="form-control" min="1" name="quantity" value="${article.count}" type="number" id="${artId}" onchange="totalCounts(event);"></span></p>
-        </dd>
-        <button class="btn btn-primary btn-lg btn-block" onclick="deleteArt();"> Eliminar Artículo </button>
-      </dl>
+        content+= `  <tr>
+        <th scope="row">
+          <img src="${article.src}" class="img-thumbnail" alt="${article.name}" width="200" height="200">
+        </th>
+        <td>
+          <h5 class="mt-3">
+            <strong>${article.name}</strong>
+          </h5>
+        </td>
+        <td></td>
+        <td><strong>${article.unitCost}</strong></td>
+        <td>
+          <input type="number" value="${article.count}" aria-label="Search" class="form-control" style="width: 100px" id="${artId}" onchange="totalCounts(event);">
+        </td>
+        <td>
+          <button type="button" class="btn btn-primary" title="Remove item"> Eliminar
+          </button>
+        </td>
+      </tr>
+      <!-- /.First row -->
          `
         var shop = document.getElementById("cart-info");
         shop.innerHTML = content;
@@ -112,7 +113,7 @@ function finishBuy() {
     
 }
 
-function totalCounts(event){
+function totalCounts(event){//Función que toma las nuevas cantidades de articulos que el usuario selecciona y realiza el cálculo para mostrar el Subtotal y el Total
 
     var id = event.target.id;
     var artSum = 0;
