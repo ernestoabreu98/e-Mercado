@@ -26,7 +26,7 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
           <input type="number" value="${article.count}" aria-label="Search" class="form-control" style="width: 100px" id="${artId}" onchange="totalCounts(event);">
         </td>
         <td>
-          <button type="button" class="btn btn-primary" title="Remove item"> Eliminar
+          <button type="button" class="btn btn-primary" id="buttons" title="Remove item" > Eliminar
           </button>
         </td>
       </tr>

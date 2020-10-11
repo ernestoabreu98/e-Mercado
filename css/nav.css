@@ -31,3 +31,13 @@ button {
     color: black;
 }
 
+#buttons {
+    background-color: #e02d6d;
+    color: white;
+    border-radius: 6px;
+    border-bottom: 0px;
+    border-top: 3px;
+    font-weight: bolder
+
+}
+
