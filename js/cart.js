@@ -1,5 +1,5 @@
 var articles = {}; //Declaro el objeto que contiene el array luego de hacer un Fetch
-var delivery = 0;
+var delivery = 0; //Variable que almacena el costo de cada envio
 var subtotal = 0; //Variable que contiene el valor para mostrar el subtotal en tiempo real
 
 
