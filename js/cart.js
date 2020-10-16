@@ -25,6 +25,7 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
         <td>
           <input type="number" value="${article.count}" aria-label="Search" class="form-control" style="width: 100px" id="${artId}" onchange="totalCounts(event);">
         </td>
+        <td id="subtotal-price1"><strong>${subtotal}</strong></td>
         <td>
           <button type="button" class="btn btn-primary" id="buttons" title="Remove item" > Eliminar
           </button>
@@ -32,6 +33,7 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
       </tr>
       <!-- /.First row -->
          `
+        
         var shop = document.getElementById("cart-info");
         shop.innerHTML = content;
         localStorage.setItem("Badge", articles.length);
