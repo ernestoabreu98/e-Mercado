@@ -1,5 +1,6 @@
 var articles = {}; //Declaro el objeto que contiene el array luego de hacer un Fetch
 var delivery = 0;
+var subtotal = 0;
 
 
 
@@ -7,9 +8,9 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
     let content = ``;
     for (let i = 0; i < element.length; i++) {
         var article = element[i];
-        var subtotal = article.unitCost*article.count;
         var artId = 'ART' + i;
         element[i].artId = artId;
+        subtotal = article.unitCost*article.count
 
         content+= `  <tr>
         <th scope="row">
@@ -25,7 +26,7 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
         <td>
           <input type="number" value="${article.count}" aria-label="Search" class="form-control" style="width: 100px" id="${artId}" onchange="totalCounts(event);">
         </td>
-        <td id="subtotal-price1"><strong>${subtotal}</strong></td>
+        <td><strong id="subtotal-prices">${subtotal} ${article.currency}</strong></td>
         <td>
           <button type="button" class="btn btn-primary" id="buttons" title="Remove item" > Eliminar
           </button>
@@ -33,7 +34,6 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
       </tr>
       <!-- /.First row -->
          `
-        
         var shop = document.getElementById("cart-info");
         shop.innerHTML = content;
         localStorage.setItem("Badge", articles.length);
@@ -43,6 +43,8 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
         
         
     } 
+    
+
 }
 
 
@@ -64,11 +66,17 @@ function showTotal(element, deliveryPrice){//Funcion que recibe un objeto como p
 
     }
 
-    document.getElementById("send-price").innerHTML = new Intl.NumberFormat("de-DE").format((total*deliveryPrice).toFixed("2")) + " USD"
+    
+  
 
+   
+    
+    document.getElementById("send-price").innerHTML = new Intl.NumberFormat("de-DE").format((total*deliveryPrice).toFixed("2")) + " USD"
+    
     document.getElementById("subtotal-price").innerHTML = total + " USD"
     total += (total*deliveryPrice);
 
+    
     
     
     document.getElementById("total-price").innerHTML = total + " USD"
@@ -122,19 +130,21 @@ function totalCounts(event){//Función que toma las nuevas cantidades de articul
 
     for (let i = 0; i < articles.length; i++) {
         if (id === articles[i].artId) {
-            console.log(articles[i].unitCost);
+            //console.log(articles[i].unitCost);
+            var currency = articles[i].currency
             var cost = articles[i].unitCost;
             artSum = event.target.value*cost;
-            console.log(artSum)
+            //console.log(artSum)
 
             
             articles[i].count = event.target.value
-            
+            subtotal = event.target.value*cost 
             
         }
     } 
-
+    
     showTotal(articles)
+    showCart(articles)
 }
 
 
