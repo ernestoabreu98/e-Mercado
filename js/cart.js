@@ -1,6 +1,6 @@
 var articles = {}; //Declaro el objeto que contiene el array luego de hacer un Fetch
 var delivery = 0;
-var subtotal = 0;
+var subtotal = 0; //Variable que contiene el valor para mostrar el subtotal en tiempo real
 
 
 
@@ -32,7 +32,7 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
           </button>
         </td>
       </tr>
-      <!-- /.First row -->
+      
          `
         var shop = document.getElementById("cart-info");
         shop.innerHTML = content;
