@@ -39,6 +39,7 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
         localStorage.setItem("Badge", articles.length);
         var badge = localStorage.getItem("Badge")
         document.getElementById("badge").innerHTML = badge;
+        document.getElementById("badge1").innerHTML = badge 
         
         
         
