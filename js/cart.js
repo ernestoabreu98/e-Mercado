@@ -5,7 +5,18 @@ var subtotal = 0; //Variable que contiene el valor para mostrar el subtotal en t
 
 
 function showCart(element){//Funcion que recibe un objeto y luego crea el contenido en el HTML con los datos obtenidos
+
+    
     let content = ``;
+
+    if (element.length == 0) {
+      content += `
+      <th scope="row">
+       <td> <h3>El Carrito está vacío...</h3> <span><a href="products.html"> Agregar Productos</a></span> </td>
+      </th>
+      `
+      
+    } else {
     for (let i = 0; i < element.length; i++) {
         var article = element[i];
         var artId = 'ART' + i;
@@ -27,23 +38,26 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
         </td>
         <td><strong id="subtotal-prices">${subtotal} ${article.currency}</strong></td>
         <td>
-          <button type="button" class="btn" id="${buttonID}" title="Remove item" onclick="deletArt(event, articles);">Eliminar
+          <button type="button" class="btn" id="${buttonID}" title="Remove item" onclick="deletArt(articles, ${i});">Eliminar
           </button>
         </td>
       </tr>
       
          `
-        var shop = document.getElementById("cart-info");
+
+        }
+        
+        
+        
+    } 
+    
+    var shop = document.getElementById("cart-info");
         shop.innerHTML = content;
         localStorage.setItem("Badge", articles.length);
         var badge = localStorage.getItem("Badge")
         document.getElementById("badge").innerHTML = badge;
         document.getElementById("badge1").innerHTML = badge //Muestra los articulos del carrito
         
-        
-        
-    } 
-    
 
 }
 
@@ -109,37 +123,15 @@ function shipp(event) {//Funcion que se encarga de modificar el valor de la vari
     
 }
 
-function deletArt(event, element) {//Funcion que se encarga de eliminar los articulos seleccionados
-  for (let i = 0; i < element.length; i++) {
-    id = element[i].id
-    value = event.target.id
-    console.log(value)
+function deletArt(element, position) {//Funcion que se encarga de eliminar los articulos seleccionados
 
-
-      switch (value) {
-        case "But0":
-          articles.splice(0,1);
-          break;
-        case "But1":
-          articles.splice(1,1);
-          break;
+      element.splice(position, 1);
       
-        default:
-          break;
-      }
-      
-    showTotal(articles);
-    showCart(articles);
+    showTotal(element);
+    showCart(element);
 
   }
       
-    }
-    
-    
-
-
-
-
 
 
 function finishBuy() {
