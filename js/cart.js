@@ -109,7 +109,7 @@ function shipp(event) {//Funcion que se encarga de modificar el valor de la vari
     
 }
 
-function deletArt(event, element) {
+function deletArt(event, element) {//Funcion que se encarga de eliminar los articulos seleccionados
   for (let i = 0; i < element.length; i++) {
     id = element[i].id
     value = event.target.id
