@@ -13,9 +13,14 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet">
+    <link href="./css/styles2.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -79,8 +84,185 @@
             <!-- /.Table body -->
     
           </table>
+          <hr>
     
         </div>
+        <div class="container align-middle align-center"><h5 class="mb-3"><strong>Tipo de Envío</strong></h5>
+          <div class="d-block my-3">
+            <div class="custom-control custom-radio">
+              <input id="goldradio" name="publicationType" type="radio" class="custom-control-input"  value="option1" onchange="shipp(event);">
+              <label class="custom-control-label" for="goldradio">Premium 2 a 5 dias (15% Adicional)</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" value="option2" onchange="shipp(event);">
+              <label class="custom-control-label" for="premiumradio">Express 5 a 8 dias (7% Adicional)</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="standardradio" name="publicationType" type="radio" class="custom-control-input"  value="option3" checked onchange="shipp(event);">
+              <label class="custom-control-label" for="standardradio">Estándar 12 a 15 dias (5% Adicional)</label>
+            </div>
+          </div>
+          <button class="btn" id="buttons"  data-toggle="modal" data-target="#exampleModal"> Seleccionar Método de Pago</button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" data-toggle="modal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                
+                
+                
+               
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">SELECCION DE PAGO</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-tarjeta-tab" data-toggle="tab" href="#nav-tarjeta" role="tab" aria-controls="nav-tarjeta" aria-selected="true">Tarjeta</a>
+                    <a class="nav-item nav-link" id="nav-transfer-tab" data-toggle="tab" href="#nav-transfer" role="tab" aria-controls="nav-transfer" aria-selected="false">Transferencia</a>
+                  </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-tarjeta" role="tabpanel" aria-labelledby="nav-tarjeta-tab">
+
+                    <div class="tab-content">
+                  
+                    <div class="modal-body" id="tarjeta" >
+                      <div class="row">
+                        <div class="col-75">
+                          <div class="container panel-default">
+                            <form action="#" class="needs-validation" novalidate>
+                      
+                              <div class="row">
+                                <div class="col-50">
+                                  <h3>Envío</h3>
+
+                                  <label for="fname"><i class="fa fa-user"></i> Nombre Completo.</label>
+                                  <input type="text" id="fname" name="firstname" placeholder="Nombre completo" required >
+                                  <div class="valid-feedback">
+                                   Looks good!
+                                  </div>
+
+
+                                  <label for="email"><i class="fa fa-envelope"></i>Correo Electronico.</label>
+                                  <input type="text" id="email" name="email" placeholder="midireccion@gmail.com">
+
+
+                                  <label for="adr"><i class="fa fa-address-card-o"></i>Dirección.</label>
+                                  <input type="text" id="adr" name="address" placeholder="Dirección de entrega">
+
+
+                                  <label for="city"><i class="fa fa-institution"></i>Ciudad.</label>
+                                  <input type="text" id="city" name="city" placeholder="Montevideo">
+                      
+                                  
+                                  <div class="row">
+                                     <div class="col-50">
+                                      <label for="zip">Codigo Postal.</label>
+                                      <input type="text" id="zip" name="zip" placeholder="12345">
+                                    </div>
+                                  </div>
+                                </div>
+                      
+                                <div class="col-50">
+                                  <h3>Pago</h3>
+                                  <label for="fname">Tarjetas Disponibles.</label>
+                                  <div class="icon-container">
+                                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                    <i class="fa fa-wheelchair-alt" aria-hidden="true"></i>
+                                    
+                                  </div>
+                                  <label for="cname">Nombre del Titular</label>
+                                  <input type="text" id="cname" name="cardname" placeholder="Titular de la Tarjeta">
+                                  <label for="ccnum">Numero de Tarjeta</label>
+                                  <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                  <label for="expmonth">Mes de vencimiento.</label>
+                                  <input type="text" id="expmonth" name="expmonth" placeholder="Mes de vencimiento">
+                      
+                                  <div class="row">
+                                    <div class="col-50">
+                                      <label for="expyear">Año de vencimiento.</label>
+                                      <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                    </div>
+                                    <div class="col-50">
+                                      <label for="cvv">CVV</label>
+                                      <input type="text" id="cvv" name="cvv" placeholder="352">
+                                    </div>
+                                  </div>
+                                </div>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  
+                  </div>
+                  <div class="tab-pane fade" id="nav-transfer" role="tabpanel" aria-labelledby="nav-transfer-tab">
+
+                    <div class="tab-content" >
+                      <div class="modal-body" id="transfer">
+    
+    <div class="panel panel-default contenedor">
+      <h3>Transferencia Bancaria:</h3>
+      <br>
+        <div class="panel-body form-horizontal payment-form">
+            <div class="form-group">
+                <label for="concept" class="col-sm-3 control-label">Cuenta de Origen</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="concept" name="concept">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description" class="col-sm-3 control-label">Descrición</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="description" name="description">
+                </div>
+            </div> 
+            <div class="form-group">
+                <label for="amount" class="col-sm-3 control-label">Cantidad</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" id="amount" name="amount">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="status" class="col-sm-3 control-label">Cuenta</label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="status" name="status">
+                        <option>Cuenta Corriente (Pesos)</option>
+                        <option>Cuenta Corriente (Dólares)</option>
+                        <option>Caja de Ahorro (Dólares)</option>
+                        <option>Caja de Ahorro (Dólares)</option>
+                    </select>
+                </div>
+            </div> 
+            <div class="form-group">
+                <label for="date" class="col-sm-3 control-label">Fecha</label>
+                <div class="col-sm-9">
+                    <input type="date" class="form-control" id="date" name="date">
+                </div>
+            </div>   
+            
+        </div>
+    </div>            
+</div> 
+</div>
+                  </div>          
+                
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  <button id="boton" type="button" class="btn btn-primary">Comprar</button>
+                </div>
+              </div>
+            </div>
+          </div>              
+        </div>
+          <hr>
 
         <div class="table-responsive">
         <table class="table product-table mb-0"> 
@@ -100,9 +282,43 @@
               <h4 class="mt-2">
                 <strong>Total: </strong><span id="total-price"></span>
               </h4>
-              <button type="button" class="btn btn-primary btn-rounded" id="buttons" onclick="finishBuy();">Finalizar Compra
+              <button type="button" class="btn" id="buttons" data-toggle="modal" data-target="#centralModalSuccess";">Finalizar Compra
                 <i class="fas fa-angle-right right"></i>
               </button>
+              <!-- Central Modal Medium Success -->
+ <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+ aria-hidden="true">
+ <div class="modal-dialog modal-notify modal-success" role="document">
+   <!--Content-->
+   <div class="modal-content">
+     <!--Header-->
+     <div class="modal-header">
+       <p class="heading lead text-center" > EXCELENTE</p>
+
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <span aria-hidden="true" class="white-text">&times;</span>
+       </button>
+     </div>
+
+     <!--Body-->
+     <div class="modal-body">
+       <div class="text-center">
+         <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+         <p><h2>Su Compra Se Ha Completado Con Éxito</h2></p>
+         <p><h3>Gracias Por Preferimos, Esperamos Verte Pronto!</h3></p>
+       </div>
+     </div>
+
+     <!--Footer-->
+     <div class="modal-footer justify-content-center">
+       <a type="button" class="btn btn-success" onclick="finishBuy();">Seguir Comprando</a>
+       <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal" onclick="signOut();">No Gracias; Deseo Salir</a>
+     </div>
+   </div>
+   <!--/.Content-->
+ </div>
+</div>
+<!-- Central Modal Medium Success-->
               </td>
             </td>
              
@@ -144,7 +360,9 @@
     <script src="js/init.js"></script>
     <script src="js/login-google.js"></script>
     <script src="js/cart.js"></script>
-    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    
     
     
     <script>

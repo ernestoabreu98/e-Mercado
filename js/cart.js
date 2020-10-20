@@ -9,6 +9,7 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
     for (let i = 0; i < element.length; i++) {
         var article = element[i];
         var artId = 'ART' + i;
+        var buttonID = "But" + i;
         element[i].artId = artId;
         subtotal = article.unitCost*article.count
 
@@ -17,9 +18,7 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
           <img src="${article.src}" class="img-thumbnail" alt="${article.name}" width="200" height="200">
         </th>
         <td>
-          <h5 class="mt-3">
             <strong>${article.name}</strong>
-          </h5>
         </td>
         <td></td>
         <td><strong>${article.unitCost}  ${article.currency}</strong></td>
@@ -28,7 +27,7 @@ function showCart(element){//Funcion que recibe un objeto y luego crea el conten
         </td>
         <td><strong id="subtotal-prices">${subtotal} ${article.currency}</strong></td>
         <td>
-          <button type="button" class="btn btn-primary" id="buttons" title="Remove item" > Eliminar
+          <button type="button" class="btn" id="${buttonID}" title="Remove item" onclick="deletArt(event, articles);">Eliminar
           </button>
         </td>
       </tr>
@@ -110,17 +109,41 @@ function shipp(event) {//Funcion que se encarga de modificar el valor de la vari
     
 }
 
+function deletArt(event, element) {
+  for (let i = 0; i < element.length; i++) {
+    id = element[i].id
+    value = event.target.id
+    console.log(value)
 
-function deletArt(art) {
-    articles.splice(art, 1)
+
+      switch (value) {
+        case "But0":
+          articles.splice(0,1);
+          break;
+        case "But1":
+          articles.splice(1,1);
+          break;
+      
+        default:
+          break;
+      }
+      
+    showTotal(articles);
+    showCart(articles);
+
+  }
+      
+    }
     
-}
+    
+
+
 
 
 
 
 function finishBuy() {
-    location.href = "cart-succesfully.html";
+    location.href = "products.html";
     
 }
 

@@ -1,0 +1,147 @@
+
+
+h1{text-align: center;
+}
+
+.border {
+    color: black;
+}
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+  }
+  
+  .col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+  }
+  
+  .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+  }
+  
+  .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+  
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 16px;
+  }
+  
+  .contenedor {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+  }
+  
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+ 
+  
+  .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+  }
+  
+
+  .sergio {
+    
+    background-color: #f2f2f2;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 16px;
+    
+    border: black;
+    width: 75%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    
+  } 
+
+  .pepe {
+
+    
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    padding: 16px;
+    
+    border: black;
+    width: 75%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    
+  } 
+
+
+  .pedro {
+    background-color: lightcoral;
+    color: white;
+   margin: 0 auto;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
+  
+  span.price {
+    float: right;
+    color: gray;
+  }
+
+  .is-invalid{
+    border-color: red;
+    background-color: white;
+  }
+
+  .is-valid{
+    border-color: green;
+    background-color: white;
+  }
+
+  .bien{
+    color: green;
+  }
+
+  .mal{
+    color: red;
+  }
+
+
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+  @media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-25 {
+      margin-bottom: 20px;
+    }
+  }
+
+  .body {
+    font-family: "Open Sans", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  }

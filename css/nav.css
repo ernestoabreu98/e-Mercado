@@ -31,6 +31,28 @@ button {
     color: black;
 }
 
+#But0 {
+    background-color: #e02d6d;
+    color: white;
+    border-radius: 6px;
+    border-bottom: 0px;
+    border-top: 3px;
+    font-weight: bolder
+
+}
+
+#But1 {
+    background-color: #e02d6d;
+    color: white;
+    border-radius: 6px;
+    border-bottom: 0px;
+    border-top: 3px;
+    font-weight: bolder
+
+}
+
+
+
 #buttons {
     background-color: #e02d6d;
     color: white;
