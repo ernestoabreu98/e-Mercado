@@ -37,7 +37,6 @@ h1{text-align: center;
   }
   
   .contenedor {
-    background-color: #f2f2f2;
     padding: 5px 20px 15px 20px;
     border: 1px solid lightgrey;
     border-radius: 3px;
@@ -60,75 +59,13 @@ h1{text-align: center;
   }
   
 
-  .sergio {
-    
-    background-color: #f2f2f2;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 16px;
-    
-    border: black;
-    width: 75%;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-    
-  } 
-
-  .pepe {
-
-    
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-    padding: 16px;
-    
-    border: black;
-    width: 75%;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-    
-  } 
-
-
-  .pedro {
-    background-color: lightcoral;
-    color: white;
-   margin: 0 auto;
-    border: none;
-    width: 100%;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 17px;
-  }
+  
   
   .btn:hover {
     background-color: #45a049;
   }
   
-  span.price {
-    float: right;
-    color: gray;
-  }
-
-  .is-invalid{
-    border-color: red;
-    background-color: white;
-  }
-
-  .is-valid{
-    border-color: green;
-    background-color: white;
-  }
-
-  .bien{
-    color: green;
-  }
-
-  .mal{
-    color: red;
-  }
+  
 
 
   
@@ -144,4 +81,17 @@ h1{text-align: center;
 
   .body {
     font-family: "Open Sans", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  }
+
+  input.is-invalid {
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: red;
+    background-color: white;
+  }
+  input.is-valid {
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: green;
+    background-color: white;
   }

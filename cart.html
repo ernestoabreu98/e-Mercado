@@ -101,7 +101,8 @@
               <label class="custom-control-label" for="standardradio">Estándar 12 a 15 dias (5% Adicional)</label>
             </div>
           </div>
-          <button class="btn" id="buttons"  data-toggle="modal" data-target="#exampleModal"> Seleccionar Método de Pago</button>
+          <button class="btn" id="buttons"  data-toggle="modal" data-target="#exampleModal"> Pago con Tarjeta</button>
+          <button class="btn" id="buttons"  data-toggle="modal" data-target="#transferModal"> Transferencia Bancaria</button>
           <div class="modal fade" id="exampleModal" tabindex="-1" data-toggle="modal" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
@@ -119,7 +120,6 @@
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link active" id="nav-tarjeta-tab" data-toggle="tab" href="#nav-tarjeta" role="tab" aria-controls="nav-tarjeta" aria-selected="true">Tarjeta</a>
-                    <a class="nav-item nav-link" id="nav-transfer-tab" data-toggle="tab" href="#nav-transfer" role="tab" aria-controls="nav-transfer" aria-selected="false">Transferencia</a>
                   </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
@@ -138,28 +138,28 @@
                                   <h3>Envío</h3>
 
                                   <label for="fname"><i class="fa fa-user"></i> Nombre Completo.</label>
-                                  <input type="text" id="fname" name="firstname" placeholder="Nombre completo" required >
+                                  <input class="validation" type="text" id="fname" name="firstname" placeholder="Nombre completo" required >
                                   <div class="valid-feedback">
                                    Looks good!
                                   </div>
 
 
                                   <label for="email"><i class="fa fa-envelope"></i>Correo Electronico.</label>
-                                  <input type="text" id="email" name="email" placeholder="midireccion@gmail.com">
+                                  <input class="validation" type="text" id="email" name="email" placeholder="midireccion@gmail.com">
 
 
                                   <label for="adr"><i class="fa fa-address-card-o"></i>Dirección.</label>
-                                  <input type="text" id="adr" name="address" placeholder="Dirección de entrega">
+                                  <input class="validation" type="text" id="adr" name="address" placeholder="Dirección de entrega">
 
 
                                   <label for="city"><i class="fa fa-institution"></i>Ciudad.</label>
-                                  <input type="text" id="city" name="city" placeholder="Montevideo">
+                                  <input class="validation" type="text" id="city" name="city" placeholder="Montevideo">
                       
                                   
                                   <div class="row">
                                      <div class="col-50">
                                       <label for="zip">Codigo Postal.</label>
-                                      <input type="text" id="zip" name="zip" placeholder="12345">
+                                      <input class="validation" type="text" id="zip" name="zip" placeholder="12345">
                                     </div>
                                   </div>
                                 </div>
@@ -176,20 +176,20 @@
                                     
                                   </div>
                                   <label for="cname">Nombre del Titular</label>
-                                  <input type="text" id="cname" name="cardname" placeholder="Titular de la Tarjeta">
+                                  <input class="validation" type="text" id="cname" name="cardname" placeholder="Titular de la Tarjeta">
                                   <label for="ccnum">Numero de Tarjeta</label>
-                                  <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                  <input class="validation" type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
                                   <label for="expmonth">Mes de vencimiento.</label>
-                                  <input type="text" id="expmonth" name="expmonth" placeholder="Mes de vencimiento">
+                                  <input class="validation" type="text" id="expmonth" name="expmonth" placeholder="Mes de vencimiento">
                       
                                   <div class="row">
                                     <div class="col-50">
                                       <label for="expyear">Año de vencimiento.</label>
-                                      <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                      <input class="validation" type="text" id="expyear" name="expyear" placeholder="2018">
                                     </div>
                                     <div class="col-50">
                                       <label for="cvv">CVV</label>
-                                      <input type="text" id="cvv" name="cvv" placeholder="352">
+                                      <input class="validation" type="text" id="cvv" name="cvv" placeholder="352">
                                     </div>
                                   </div>
                                 </div>
@@ -211,13 +211,13 @@
       <br>
         <div class="panel-body form-horizontal payment-form">
             <div class="form-group">
-                <label for="concept" class="col-sm-3 control-label">Cuenta de Origen</label>
+                <label for="concept" class="col-sm-5 control-label">Cuenta de Origen</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="concept" name="concept">
                 </div>
             </div>
             <div class="form-group">
-                <label for="description" class="col-sm-3 control-label">Descrición</label>
+                <label for="description" class="col-sm-3 control-label">Descripción</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="description" name="description">
                 </div>
@@ -229,7 +229,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="status" class="col-sm-3 control-label">Cuenta</label>
+                <label for="status" class="col-sm-5 control-label">Cuenta Destino</label>
                 <div class="col-sm-9">
                     <select class="form-control" id="status" name="status">
                         <option>Cuenta Corriente (Pesos)</option>
@@ -244,18 +244,15 @@
                 <div class="col-sm-9">
                     <input type="date" class="form-control" id="date" name="date">
                 </div>
-            </div>   
-            
+            </div> 
         </div>
     </div>            
 </div> 
 </div>
-                  </div>          
-                
-
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                  <button id="boton" type="button" class="btn btn-primary">Comprar</button>
+</div>          
+ <div class="modal-footer">
+                  <button id="close" type="button" class="btn" data-dismiss="modal">Cerrar</button>
+                  <button id="buy" type="button" class="btn" onclick="validate();">Guardar</button>
                 </div>
               </div>
             </div>
@@ -281,9 +278,10 @@
               <h4 class="mt-2">
                 <strong>Total: </strong><span id="total-price"></span>
               </h4>
-              <button type="button" class="btn" id="buttons" data-toggle="modal" data-target="#centralModalSuccess";">Finalizar Compra
-                <i class="fas fa-angle-right right"></i>
+              <label id="labelBtn1" for="buttons1">Debe seleccionar un método de pago</label>
+              <button type="button" class="btn" id="buttons1"  data-toggle="modal" data-target="#centralModalSuccess" disabled>Finalizar Compra
               </button>
+              
               <!-- Central Modal Medium Success -->
  <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
  aria-hidden="true">
@@ -298,6 +296,7 @@
          <span aria-hidden="true" class="white-text">&times;</span>
        </button>
      </div>
+     
 
      <!--Body-->
      <div class="modal-body">
@@ -337,6 +336,74 @@
           <!-- Fourth row -->
         </table>
       </div>
+
+      <!-- Modal -->
+<div class="modal fade" id="transferModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Transferencia Bancaria</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="panel panel-default contenedor">
+          <h3>Transferencia Bancaria:</h3>
+          <br>
+            <div class="panel-body form-horizontal payment-form">
+                <div class="form-group">
+                    <label for="concept" class="col-sm-5 control-label">Cuenta de Origen</label>
+                    <div class="col-sm-9">
+                        <input class="validation1" type="text" class="form-control" id="concept" name="concept">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="col-sm-3 control-label">Descripción</label>
+                    <div class="col-sm-9">
+                        <input class="validation1" type="text" class="form-control" id="description" name="description">
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label for="amount" class="col-sm-3 control-label">Cantidad</label>
+                    <div class="col-sm-9">
+                        <input class="validation1" type="number" class="form-control" id="amount" name="amount">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="col-sm-5 control-label">Cuenta Destino</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" id="status" name="status">
+                            <option>Cuenta Corriente (Pesos)</option>
+                            <option>Cuenta Corriente (Dólares)</option>
+                            <option>Caja de Ahorro (Dólares)</option>
+                            <option>Caja de Ahorro (Dólares)</option>
+                        </select>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label for="date" class="col-sm-3 control-label">Fecha</label>
+                    <div class="col-sm-9">
+                        <input class="validation1" type="date" class="form-control" id="date" name="date">
+                    </div>
+                </div> 
+            </div>
+        </div>     
+        <div class="modal-footer">
+          <button id="close" type="button" class="btn" data-dismiss="modal">Cerrar</button>
+          <button id="buy" type="button" class="btn" onclick="validate1();">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>              
+</div>       
+    </div> 
+    
+      </div>
+      
+    </div>
+  </div>
+</div>
     
     
       </section>

@@ -138,6 +138,10 @@ function finishBuy() {
     location.href = "products.html";
     
 }
+function finishAll() {
+    location.href = "cart-succesfully.html";
+    
+}
 
 function totalCounts(event){//Función que toma las nuevas cantidades de articulos que el usuario selecciona y realiza el cálculo para mostrar el Subtotal y el Total
 
@@ -165,7 +169,73 @@ function totalCounts(event){//Función que toma las nuevas cantidades de articul
 
 
 
+function validate(){
 
+  var clases = document.getElementsByClassName("validation");
+  var closeBtn = document.getElementById("buttons1");
+  var valid = false;
+
+  for (let i = 0; i < clases.length; i++) {
+    clases[i].classList.remove("is-invalid");
+    clases[i].classList.remove("is-valid");
+
+    if (clases[i].value === "" || clases[i].value === 0) {
+      clases[i].classList.add("is-invalid");
+      valid = false
+      
+    }
+    else {
+      clases[i].classList.add("is-valid");
+      valid = true
+    }
+    
+  }
+   if (valid === false) {
+     alert("Debe completar todos los campos")
+     closeBtn.disabled = true
+    
+   } else {
+     closeBtn.disabled = false
+     document.getElementById("labelBtn1").style.display = "none"
+  }
+}
+
+function validate1(){
+
+  var clases = document.getElementsByClassName("validation1");
+  var closeBtn = document.getElementById("buttons1");
+  var valid = false;
+
+  for (let i = 0; i < clases.length; i++) {
+    clases[i].classList.remove("is-invalid");
+    clases[i].classList.remove("is-valid");
+
+    if (clases[i].value === "" || clases[i].value === 0) {
+      clases[i].classList.add("is-invalid");
+      valid = false
+      
+    }
+    else {
+      clases[i].classList.add("is-valid");
+      valid = true
+    }
+    
+  }
+   if (valid === false) {
+     alert("Debe completar todos los campos")
+     closeBtn.disabled = true
+    
+   } else {
+     closeBtn.disabled = false
+     document.getElementById("labelBtn1").style.display = "none"
+  }
+}
+
+
+
+
+
+ 
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
