@@ -1,8 +1,6 @@
 var buy = {}
 var data = {}
 var savedData = {}
-finalData = "";
-savedData = "";
 
 
 function showBuy(element){
@@ -80,8 +78,13 @@ var phone = document.getElementById("phone");
 
 
 
-savedData = localStorage.getItem('data');
-data = JSON.parse(savedData)
+let savedData = localStorage.getItem('data');
+
+if (savedData == null) {
+    data.name = "";
+    
+}else {
+    data = JSON.parse(savedData)
 console.log(savedData)
 
 name.innerHTML = data.name
@@ -89,6 +92,8 @@ age.innerHTML = data.age;
 mail.innerHTML = data.mail;
 phone.innerHTML = data.phone;
     
+}
+
 
     
     
