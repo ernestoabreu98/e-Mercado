@@ -4,34 +4,23 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="google-signin-client_id" content="973386847371-t0412hgakursrq0i94v16kcbd1rhtlha.apps.googleusercontent.com">
+    <meta name="google-signin-scope" content="profile email">
+    <title>eMercado - Todo lo que busques está aquí</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
-
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <link href="css/dropzone.css" rel="stylesheet">
-</head>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="./css/styles.css" rel="stylesheet">
+    <link href="./css/styles2.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
@@ -40,17 +29,123 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="button-name">
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#"><img src="./icons/profile.ico"> Mi Perfil</a></li>
+          <li><a class="py-2 d-none d-md-inline-block" href="cart.html"><img src="./icons/cart.ico"> Mi carrito</a><span class="badge badge-info" id="badge">1</span></li>
+          <li><button id="cerrar-sesion" onclick="signOut();">Cerrar Sesión</button></li>
+        </ul>
+      </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
+  <div class="container my-5 py-5 z-depth-1">
+
+
+    <!--Section: Content-->
+    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+
+      <!--Grid row-->
+      <div class="row">
+
+        <!--Grid column-->
+        <div class="col-lg-5 col-md-12 mb-0 mb-md-0">
+
+          <h3 class="font-weight-bold text-center">Mi Perfil</h3>
+         <!--  <div class="view card-img-100 mx-auto mt-5 mb-4">
+            <img src="./img/cat4.jpg" class="rounded-circle img-fluid" alt="smaple image">
+          </div> -->
+
+          <div class="text-center">
+            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar" id="img">
+            <p>Seleccione su Foto...</p>
+            <input type="file" class="text-center center-block file-upload">
+          </div><br><hr>
+          
+          <p><span class="font-weight-bold mr-2">Nombre:</span><a href="" id="name"></a></p>
+          <p><span class="font-weight-bold mr-2">Edad:</span><a href="" id="age"></a></p>
+          <p><span class="font-weight-bold mr-2">Email:</span><a href="" id="mail"></a></p>
+          <p><span class="font-weight-bold mr-2">Phone:</span><a href="" id="phone"></a></p>
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-7 col-md-12 mb-4 mb-md-0">
+          <br>
+
+          <!--Grid row-->
+          <div class="row">
+
+            <!--Grid column-->
+            <div class="col-md-6">
+
+              <!-- Material outline input -->
+              <div class="md-form md-outline mb-0">
+                <input type="text" id="form-first-name" class="form-control">
+                <label for="form-first-name">Nombre</label>
+              </div>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-6">
+
+              <!-- Material outline input -->
+              <!-- <div class="md-form md-outline mb-0">
+                <input type="text" id="form-last-name" class="form-control">
+                <label for="form-last-name">Apellido</label>
+              </div> -->
+
+            </div>
+            <!--Grid column-->
+
+          </div>
+          <!--Grid row-->
+
+          <!-- Material outline input -->
+          <div class="md-form md-outline mt-3">
+            <input type="email" id="form-email" class="form-control">
+            <label for="form-email">E-mail</label>
+          </div>
+
+          <!-- Material outline input -->
+          <div class="md-form md-outline">
+            <input type="text" id="form-age" class="form-control">
+            <label for="form-age">Edad</label>
+          </div>
+
+          <!-- Material outline input -->
+          <div class="md-form md-outline">
+            <input type="text" id="form-subject" class="form-control">
+            <label for="form-subject">Teléfono</label>
+          </div>
+
+          
+
+          <button type="submit" class="btn"id="buttons2" onclick="saveData();">Guardar Datos</button>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
       <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+      <!--Grid row-->
+      <div class="container">
+        <h4 class="text-center font-weight-bold">Mis Compras</h4>
+        <br>
+        <div class="row justify-content-center h-100" id="buy-container">
     </div>
+
+    </section>
+    <!--Section: Content-->
+
+
   </div>
+
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
@@ -71,11 +166,28 @@
       <div></div>
     </div>
   </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/my-profile.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/login-google.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script src="js/my-profile.js"></script>
+    <script>
+      const user_account = document.getElementById("button-name");
+
+      if (localStorage.getItem("user") === null) {
+        location.href = "login.html";
+        
+      } else {
+        user_account.innerHTML += `Bienvenido/a: ${localStorage.getItem("user")}`
+        
+      }
+    </script>
+    <script>
+      var badge = localStorage.getItem("Badge")
+        document.getElementById("badge").innerHTML = badge;
+    </script>
 </body>
 
 </html>
