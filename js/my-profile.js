@@ -72,7 +72,7 @@ phone.innerHTML = data.phone;
 
 
 function showData() {
-    var name = document.getElementById("name");
+var name = document.getElementById("name");
 var age = document.getElementById("age");
 var mail = document.getElementById("mail");
 var phone = document.getElementById("phone");
@@ -115,13 +115,18 @@ $(document).ready(function() {
     });
 });
 
+
+
+
 document.addEventListener("DOMContentLoaded", function(e){
+    
     getJSONData(CART_INFO_URL1).then(function(resultObj){//Fetch a una URL que almacena los datos en el objeto "articles", previamente declarado
         if (resultObj.status === "ok") {
     
             buy = resultObj.data.articles;
             showBuy(buy);
             showData();
+            
             
        
         }
