@@ -100,7 +100,7 @@ img.src = data.img;
     
 }
 
-$(document).ready(function() {
+$(document).ready(function() {//Funcion que permite cargar un archivo desde una ruta local
 
     
     var readURL = function(input) {
