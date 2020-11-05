@@ -34,23 +34,22 @@ function showBuy(element){
 
 
 
-function saveData() {
+function saveData() {//Funcion que se encarga de guardar los datos que obtiene de los input en el localStorage
 
 var name = document.getElementById("name");
-//var lastName = document.getElementById("lastName");
 var age = document.getElementById("age");
 var mail = document.getElementById("mail");
 var phone = document.getElementById("phone");
 
 var getName = document.getElementById("form-first-name").value;
-//var getLastName = document.getElementById("form-last-name").value;
+var getImg = document.getElementById("img").src;
 var getAge = document.getElementById("form-age").value;
 var getMail = document.getElementById("form-email").value;
 var getPhone = document.getElementById("form-subject").value;
 
 
 data.name = getName;
-//data.lastName = getLastName;
+data.img = getImg;
 data.age = getAge;
 data.mail = getMail;
 data.phone = getPhone;
@@ -69,11 +68,12 @@ phone.innerHTML = data.phone;
 }
 
 
-function showData() {
+function showData() {//Funcion que se encarga de mostrar los datos previamente guardados en el localStorage
 var name = document.getElementById("name");
 var age = document.getElementById("age");
 var mail = document.getElementById("mail");
 var phone = document.getElementById("phone");
+var img = document.getElementById("img");
 
 
 
@@ -91,6 +91,7 @@ name.innerHTML = data.name
 age.innerHTML = data.age;
 mail.innerHTML = data.mail;
 phone.innerHTML = data.phone;
+img.src = data.img;
     
 }
 
